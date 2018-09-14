@@ -44,25 +44,11 @@ def get_resource():
     resource = vitrageclient()
     return resource
 
-data = []
-
-@app.route('/MECrca',methods=['GET'])
-def rca_data():
-
-    #if not request.json:
-    #    abort(400)
-    global data
-    return json.dumps(data['vertices'])
-    #print(oata['vertices'])
-    # get_rca(5.0)
-
-
 @app.route('/MECrcaagent',methods=['POST','PUT'])
 def rca_server():
 
     #if not request.json:
     #    abort(400)
-    global data
     data = request.json
     print(data)
     print(type(data))
